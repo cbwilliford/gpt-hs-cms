@@ -1,0 +1,32 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: GPT Page
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
+  <meta name="description" content="{{ content.meta_description }}">
+  {% if brand_settings.primaryFavicon.src %}
+  <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
+  {% endif %}
+  {{ standard_header_includes }}
+  <link rel="stylesheet" href="{{ get_asset_url('./style.css') }}">
+</head>
+<body>
+  <div id="chat-window">
+
+  </div>
+  <div id="error-message"></div>
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="What's up?" />
+    <button type="submit">Send</button>
+  </form>
+  <button id="clear-history">Clear Chat History</button>
+  <script src="{{ get_asset_url('./chat.js') }}"></script>
+  {{ standard_footer_includes }}
+</body>
+</html>

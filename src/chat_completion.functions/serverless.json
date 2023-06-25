@@ -1,0 +1,12 @@
+{
+  "runtime": "nodejs18.x",
+  "version": "1.0",
+  "environment": {},
+  "secrets": ["openai_token"],
+  "endpoints": {
+    "chat/completion": {
+      "method": "POST",
+      "file": "chat_completion.js"
+    }
+  }
+}
